@@ -34,7 +34,7 @@ namespace Store.Web.Data
                     FirstName = "David",
                     LastName = "Gramacho",
                     Email = "davidfgramacho@portugalmail.pt",
-                    UserName = "davidfgaramacho@portugalmail.pt",
+                    UserName = "davidfgramacho@portugalmail.pt",
                     PhoneNumber = "217538964"
                 };
 

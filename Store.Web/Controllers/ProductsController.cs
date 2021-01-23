@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Threading.Tasks;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
@@ -48,6 +49,7 @@ namespace Store.Web.Controllers
             return View(product);
         }
 
+        [Authorize]
         // GET: Products/Create
         public IActionResult Create()
         {
@@ -111,6 +113,7 @@ namespace Store.Web.Controllers
             };
         }
 
+        [Authorize]
         // GET: Products/Edit/5
         public async Task <IActionResult> Edit(int? id)
         {
@@ -206,6 +209,7 @@ namespace Store.Web.Controllers
             return View(view);
         }
 
+        [Authorize]
         // GET: Products/Delete/5
         public async Task<IActionResult> Delete(int? id)
         {
