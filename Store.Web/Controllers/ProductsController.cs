@@ -49,7 +49,7 @@ namespace Store.Web.Controllers
             return View(product);
         }
 
-        [Authorize]
+        [Authorize(Roles="Admin")]
         // GET: Products/Create
         public IActionResult Create()
         {
@@ -113,7 +113,7 @@ namespace Store.Web.Controllers
             };
         }
 
-        [Authorize]
+        [Authorize(Roles ="Admin")]
         // GET: Products/Edit/5
         public async Task <IActionResult> Edit(int? id)
         {
@@ -156,7 +156,7 @@ namespace Store.Web.Controllers
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Edit(int id, [Bind("Id,Name,Price,ImageFile,LastPurchase,LastSale,IsAvailable,Stock")] ProductViewModel view)
+        public async Task<IActionResult> Edit(int id, [Bind("Id,Name,Price,ImageFile,ImageUrl,LastPurchase,LastSale,IsAvailable,Stock")] ProductViewModel view)
         {
 
             if (ModelState.IsValid)
@@ -209,7 +209,7 @@ namespace Store.Web.Controllers
             return View(view);
         }
 
-        [Authorize]
+        [Authorize(Roles ="Admin")]
         // GET: Products/Delete/5
         public async Task<IActionResult> Delete(int? id)
         {
